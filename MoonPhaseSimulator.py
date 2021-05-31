@@ -32,7 +32,7 @@ def terminus_side_finder(angle):
         else:
             return "left"
 
-# A function for finding the x coordinate of the moon
+# A function for finding the x coordinates of the moon
 def circle_x_generator(x, r):
     return sqrt(r**2 - x**2)
 
