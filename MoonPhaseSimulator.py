@@ -90,8 +90,6 @@ elif terminus_side == "left":
     for num in y:
         ellipse_x.append(-ellipse_x_generator(num, radius, turn_angle))
 
-print(ellipse_x)
-print(terminus_side)
 plt.plot(ellipse_x, y, color="black")
 
 # Dealing with the moon shading(dark side)
