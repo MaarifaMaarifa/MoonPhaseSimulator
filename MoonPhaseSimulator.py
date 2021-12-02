@@ -1,12 +1,12 @@
 from matplotlib import pyplot as plt
 from math import radians, sqrt, cos
 
-time_period = 29.5
-radius = 100
+TIME_PERIOD = 29.5
+RADIUS = 100
 
 
 def turn_angle_finder(days_num):
-    angle = (360 / time_period) * days_num
+    angle = (360 / TIME_PERIOD) * days_num
     if angle < 360:
         return angle
     else:
@@ -62,14 +62,9 @@ def ellipse_x_generator(y, r, angle):
 
 
 # Dealing with the moon(circle)
-y = list(range(-radius, (radius + 1)))
-circle_x_positive = []
-circle_x_negative = []
-
-for num in y:
-    circle_x_positive.append(circle_x_generator(num, radius))
-for num in circle_x_positive:
-    circle_x_negative.append(-num)
+y = list(range(-RADIUS, (RADIUS + 1)))
+circle_x_positive = [circle_x_generator(num, RADIUS) for num in y]
+circle_x_negative = [-num for num in circle_x_positive]
 
 plt.plot(y, circle_x_positive, color="black")
 plt.plot(y, circle_x_negative, color="black")
@@ -82,13 +77,12 @@ terminus_side = terminus_side_finder(turn_angle)
 dark_side = dark_side_finder(turn_angle)
 
 # Dealing with the terminus(ellipse)
-ellipse_x = []
 if terminus_side == "right":
     for num in y:
-        ellipse_x.append(ellipse_x_generator(num, radius, turn_angle))
+        ellipse_x = [ellipse_x_generator(num, RADIUS, turn_angle) for num in y]
 elif terminus_side == "left":
     for num in y:
-        ellipse_x.append(-ellipse_x_generator(num, radius, turn_angle))
+        ellipse_x = [-ellipse_x_generator(num, RADIUS, turn_angle) for num in y]
 
 plt.plot(ellipse_x, y, color="black")
 
