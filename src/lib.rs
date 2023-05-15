@@ -15,26 +15,26 @@ pub enum MoonPhase {
     /// The first phase of the moon with respect to it's position angle (angle 0 or 360)
     NewMoon,
 
-    /// The second Phase of the moon with respect to it's position angle (angle 90)
-    FirstQuarter,
-
-    /// The third Phase of the moon with respect to it's position angle (angle 180)
-    FullMoon,
-
-    /// The fourth Phase of the moon with respect to it's position angle (angle 270)
-    LastQuarter,
-
     /// The second Phase of the moon with respect to it's position angle (angle 0 < angle < 90)
     WaxingCrescent,
 
-    /// The second Phase of the moon with respect to it's position angle (angle 90 < angle < 360)
+    /// The third Phase of the moon with respect to it's position angle (angle 90)
+    FirstQuarter,
+
+    /// The fourth Phase of the moon with respect to it's position angle (angle 90 < angle < 360)
     WaxingGibbous,
 
-    /// The second Phase of the moon with respect to it's position angle (angle 270 < angle < 360)
-    WaningCrescent,
+    /// The fifth Phase of the moon with respect to it's position angle (angle 180)
+    FullMoon,
 
-    /// The second Phase of the moon with respect to it's position angle (angle 180 < angle < 270)
+    /// The sixth Phase of the moon with respect to it's position angle (angle 180 < angle < 270)
     WaningGibbous,
+
+    /// The seventh Phase of the moon with respect to it's position angle (angle 270)
+    LastQuarter,
+
+    /// The eigth Phase of the moon with respect to it's position angle (angle 270 < angle < 360)
+    WaningCrescent,
 }
 
 /// The position of the moon with respect to the Earth and the Sun in angles
