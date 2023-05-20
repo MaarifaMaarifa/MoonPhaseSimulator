@@ -1,5 +1,6 @@
 [package]
 name = "moon-phase-simulator"
+repository = "https://github.com/MaarifaMaarifa/MoonPhaseSimulator"
 version = "0.1.0"
 edition = "2021"
 
